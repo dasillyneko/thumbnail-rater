@@ -5,6 +5,8 @@ import "./globals.css";
 import { Providers } from "./providers";
 
 import { Header } from "./header";
+import { Toast } from "@radix-ui/react-toast";
+import { Toaster } from "@/components/ui/toaster";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,6 +27,7 @@ export default function RootLayout({
       <Providers>
         <Header />
         <div className="container">{children}</div>
+        <Toaster />
       </Providers>
       </body>
     </html>

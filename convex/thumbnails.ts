@@ -16,11 +16,11 @@ export const createThumbnail = mutation({
         if (!user){
             throw new Error("you must be logged in to create a thumbnail");
         }
-        await ctx.db.insert('thumbnails',{
-            title:args.title,
+        return await ctx.db.insert('thumbnails',{
+            title:  args.title,
             userId: user.subject,
-            aImage:args.aImage,
-            bImage:args.bImage
+            aImage: args.aImage,
+            bImage: args.bImage
         });
     },
 });
